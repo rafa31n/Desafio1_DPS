@@ -1,0 +1,276 @@
+/* Globales */
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.icon-cart {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-cart:hover {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #E3C567;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.title-header {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  color: #3C362A;
+  font-weight: 900;
+}
+
+.container-icon {
+  position: relative;
+}
+
+.count-products {
+  position: absolute;
+  top: 55%;
+  right: -40%;
+  background-color: #272727;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+#contador-productos {
+  font-size: 12px;
+}
+
+.container-cart-products {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  width: 500px;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+  border-radius: 10px;
+
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.info-cart-product {
+  display: flex;
+  justify-content: space-between;
+  flex: 0.8;
+}
+
+.titulo-producto-carrito {
+  font-size: 20px;
+  color: #000;
+  font-family: Helvetica, sans-serif;
+}
+
+.precio-producto-carrito {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #000;
+  font-family: Helvetica, sans-serif;
+}
+
+.cantidad-producto-carrito {
+  font-weight: 400;
+  font-size: 20px;
+  color: #000;
+  font-family: Helvetica, sans-serif;
+}
+
+.icon-close {
+  width: 25px;
+  height: 25px;
+}
+
+.icon-close:hover {
+  stroke: red;
+  cursor: pointer;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+  color: #000;
+}
+
+.cart-total h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.total-pagar {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.hidden-cart {
+  display: none;
+}
+
+/* Main */
+.container-items {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.item {
+  border-radius: 10px;
+}
+
+.item:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: all .5s;
+}
+
+.item figure {
+  overflow: hidden;
+}
+
+.item:hover img {
+  transform: scale(1.2);
+}
+
+.info-product {
+  padding: 15px 30px;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title-product {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+}
+
+.title-product-carrito {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+  margin: 10px;
+  text-align: center;
+}
+
+.description-product {
+  font-family: Helvetica, sans-serif;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.add-product-btn {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #FF9505;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.add-product-span {
+  background: #FF9505;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.add-product-btn:hover .add-product-span {
+  width: 100%;
+}
+
+.cart-empty {
+  padding: 20px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  color: #000;
+}
+
+
+.hidden {
+  display: none;
+}
+
+/*  ESTILOS   */
+
+.btn-clear-all {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #5A2328;
+  background: #5A2328;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 25px;
+}
+
+.img-cart {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.input-number{
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+}
